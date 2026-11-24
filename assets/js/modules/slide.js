@@ -159,7 +159,7 @@ export class Slide {
 		this.addEvents();
 		this.config();
 
-		this.changePosition(0);
+		this.changePosition(this.slideList.length > 1 ? 1 : 0);
 
 		return this;
 	}
@@ -171,10 +171,10 @@ export class NavigableSlide extends Slide {
 		navigationControl.classList.add("slide-navigation");
 
 		this.prevElement = document.createElement("button");
-		this.prevElement.innerText = "Anterior";
+		this.prevElement.classList.add("prev");
 
 		this.nextElement = document.createElement("button");
-		this.nextElement.innerText = "Próximo";
+		this.nextElement.classList.add("next");
 
 		navigationControl.append(this.prevElement);
 		navigationControl.append(this.nextElement);
